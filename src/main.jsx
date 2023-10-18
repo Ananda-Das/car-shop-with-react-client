@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Root from './layouts/Root';
 import Home from './Pages/Home/Home';
+import AddBrandInfo from './Pages/BrandInfo/AddBrandInfo';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/addbrand",
+        element: <AddBrandInfo></AddBrandInfo>
       }
     ]
   },

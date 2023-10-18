@@ -22,6 +22,12 @@ const Navbar = () => {
         </NavLink>
       </li>
 
+      <li className="uppercase">
+        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to="/addbrand">
+          Add Brand
+        </NavLink>
+      </li>
+
       {/* {user ? (
             <>
               <li className="uppercase">

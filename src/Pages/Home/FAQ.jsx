@@ -29,7 +29,7 @@ const FAQ = () => {
         </div>
       </div>
       <div className="text-center my-5">
-      <button className="uppercase bg-[#D81517] text-white text-base p-5 hover:bg-gray-600 font-semibold">Make a question</button>
+        <button className="uppercase bg-[#D81517] text-white text-base p-5 hover:bg-gray-600 font-semibold">Make a question</button>
       </div>
     </div>
   );
