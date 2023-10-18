@@ -7,6 +7,9 @@ import Home from "./Pages/Home/Home";
 import AddBrandInfo from "./Pages/BrandInfo/AddBrandInfo";
 import CreatProduct from "./Pages/AddProduct/CreatProduct";
 import BrandsDetails from "./Pages/BrandInfo/BrandsDetails";
+import UpdateProduct from "./Pages/AddProduct/UpdateProduct";
+import DetailProduct from "./Pages/AddProduct/DetailProduct";
+// import BrandDetails from "./Pages/BrandInfo/BrandDetails";
 
 const router = createBrowserRouter([
   {
@@ -25,12 +28,25 @@ const router = createBrowserRouter([
       {
         path: "/brands/:brandName",
         element: <BrandsDetails></BrandsDetails>,
-        // loader: () => fetch("http://localhost:5000/brands"),
         loader: () => fetch("http://localhost:5000/cars"),
       },
+      // {
+      //   path: "/brands/:id",
+      //   element: <BrandDetails></BrandDetails>,
+      //   loader: () => fetch("http://localhost:5000/brands"),
+      // },
       {
         path: "/addbrand",
         element: <AddBrandInfo></AddBrandInfo>,
+      },
+      {
+        path: "brands/:brandName/updateCar/:id",
+        element: <UpdateProduct></UpdateProduct>,
+      },
+      {
+        path: "/brands/:brandName/details/:id",
+        element: <DetailProduct></DetailProduct>,
+        loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`),
       },
     ],
   },
