@@ -2,8 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import Rating from "./Rating";
 
 const DetailProduct = () => {
+  
   const carDetail = useLoaderData();
-  // console.log(carDetail);
 
   const { image, name, type, ratting, description, price, brand } = carDetail;
 
@@ -16,7 +16,7 @@ const DetailProduct = () => {
         </div>
         {/* table-start */}
         <div className="overflow-x-auto mb-10">
-          <table className="table text-xl">
+          <table className="table text-base">
             {/* head */}
             {/* <thead>
               <tr>
@@ -29,17 +29,17 @@ const DetailProduct = () => {
             <tbody>
               {/* row 1 */}
               <tr className="hover">
-                <td>Model Name</td>
+                <td>Name</td>
                 <td>{name}</td>
               </tr>
               <tr className="hover">
-                <td>Brand Name</td>
-                <td>{brand}</td>
+                <td>Brand</td>
+                <td className="uppercase font-bold">{brand}</td>
               </tr>
               {/* row 2 */}
               <tr className="hover">
                 <td>Car Type</td>
-                <td>{type}</td>
+                <td className="uppercase">{type}</td>
               </tr>
               {/* row 3 */}
               <tr className="hover">
