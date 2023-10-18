@@ -6,6 +6,7 @@ import Root from "./layouts/Root";
 import Home from "./Pages/Home/Home";
 import AddBrandInfo from "./Pages/BrandInfo/AddBrandInfo";
 import CreatProduct from "./Pages/AddProduct/CreatProduct";
+import BrandsDetails from "./Pages/BrandInfo/BrandsDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,12 @@ const router = createBrowserRouter([
       {
         path: "/addProducts",
         element: <CreatProduct></CreatProduct>,
+      },
+      {
+        path: "/brands/:brandName",
+        element: <BrandsDetails></BrandsDetails>,
+        // loader: () => fetch("http://localhost:5000/brands"),
+        loader: () => fetch("http://localhost:5000/cars"),
       },
       {
         path: "/addbrand",

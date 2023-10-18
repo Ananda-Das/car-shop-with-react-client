@@ -74,12 +74,12 @@ const CreatProduct = () => {
               <input type="text" placeholder="Product Brand Name" name="brand" className="input input-bordered w-full" /> */}
               <select className="select select-bordered w-full" name="brand">
                 <option>Select Brand</option>
-                <option value="toyota">Toyota</option>
-                <option value="ford">Ford</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Ford">Ford</option>
                 <option value="bmw">BMW</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="tesla">Tesla</option>
-                <option value="honda">Honda</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Honda">Honda</option>
               </select>
             </label>
           </div>
