@@ -11,7 +11,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li className="uppercase">
-        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to="/events">
+        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to="/addProducts">
           Add Product
         </NavLink>
       </li>
