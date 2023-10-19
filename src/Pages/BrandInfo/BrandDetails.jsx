@@ -8,8 +8,8 @@ const BrandDetails = ({ brandDetails }) => {
 
   return (
     <div>
-      <div className="card card-side bg-base-100 shadow-xl w-10/12 mx-auto my-5 space-y-5 border">
-        <figure className="w-4/12">
+      <div className="card card-side bg-base-100 shadow-xl flex-col lg:flex-row w-10/12 mx-auto my-5 space-y-5 border">
+        <figure className="lg:w-4/12 w-full">
           <img className="ml-8" src={image} alt="Movie" />
         </figure>
         <div className="card-body">

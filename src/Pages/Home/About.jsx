@@ -2,7 +2,7 @@ import aboutImg from "/image/who.jpg";
 
 const About = () => {
   return (
-    <div className="flex flex-1 gap-5 mt-10 justify-around items-center p-5">
+    <div className="flex flex-1 gap-5 mt-10 justify-around items-center p-5 lg:flex-row flex-col-reverse">
       <div className="w-full">
         <img src={aboutImg} alt="" />
       </div>

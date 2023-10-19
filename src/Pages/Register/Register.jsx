@@ -86,7 +86,7 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-gray-500 bg-opacity-50 bg-cover bg-no-repeat ">
+    <div className="bg-gray-500 bg-opacity-50 bg-cover bg-no-repeat py-12">
       {/* Register-start */}
       <div>
         <h1 className="mx-auto pt-5 text-5xl text-center font-extrabold uppercase text-[#db2d2e]">Please Register</h1>
@@ -121,7 +121,7 @@ const Register = () => {
                 className="input input-bordered relative w-full"
                 required
               />
-              <span className="absolute text-xl bg-white mt-3 ml-[550px]" onClick={() => setShowPassword(!showPassword)}>
+              <span className="absolute text-xl bg-white mt-3 lg:ml-[550px] ml-[305px]" onClick={() => setShowPassword(!showPassword)}>
                 {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
               </span>
             </label>

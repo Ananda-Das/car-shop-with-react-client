@@ -3,7 +3,7 @@ import logopic from "/logo-light1.png";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-base-200 text-base-content grid grid-cols-3 gap-5 py-16">
+      <footer className="footer p-10 bg-base-200 text-base-content grid md:grid-cols-1 lg:grid-cols-3 gap-5 py-16">
         <div>
           <img src={logopic} alt="" />
           <p className="text-[#777] text-base my-5">
