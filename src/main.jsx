@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/carts/${params.user}`),
+        loader: () => fetch("https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/carts"),
       },
       {
         path: "/brands/:brandName",
