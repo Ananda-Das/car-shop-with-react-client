@@ -3,6 +3,7 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
@@ -72,6 +73,7 @@ const Login = () => {
           <div className="form-control mt-6">
             <button className="btn bg-[#ce1446] text-white font-bold hover:text-[#ce1446] ">Login</button>
           </div>
+          <Toaster></Toaster>
         </form>
         <div className="lg:w-1/3 md:h-3/4 mx-auto card-body mt-[-30px]">
           <button onClick={handleGoogleSignIn} className="btn btn-outline w-full">

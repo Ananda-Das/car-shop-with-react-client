@@ -15,8 +15,11 @@ const AddBrandInfo = () => {
     const form = e.target;
     const brandName = form.brandName.value;
     const brandImg = form.brandImg.value;
+    const brandSliderImg1 = form.brandSliderImg1.value;
+    const brandSliderImg2 = form.brandSliderImg2.value;
+    const brandSliderImg3 = form.brandSliderImg3.value;
 
-    const brandInfo = { brandName, brandImg };
+    const brandInfo = { brandName, brandImg, brandSliderImg1, brandSliderImg2, brandSliderImg3 };
 
     //send data to the server
     fetch("http://localhost:5000/brands", {
@@ -61,11 +64,24 @@ const AddBrandInfo = () => {
                   <span className="label-text">Brand Image Url</span>
                 </label>
                 <input name="brandImg" type="text" placeholder="Brand Image Url" className="input input-bordered" required />
-                {/* <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label> */}
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Brand Slider Image1 Url</span>
+                </label>
+                <input name="brandSliderImg1" type="text" placeholder="Brand Slider Image1 Url" className="input input-bordered" required />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Brand Slider Image2 Url</span>
+                </label>
+                <input name="brandSliderImg2" type="text" placeholder="Brand Slider Image2 Url" className="input input-bordered" required />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Brand Slider Image3 Url</span>
+                </label>
+                <input name="brandSliderImg3" type="text" placeholder="Brand Slider Image3 Url" className="input input-bordered" required />
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Add Brand</button>
