@@ -13,6 +13,7 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import AuthProvider from "./Providers/AuthProvider";
 import PrivateRoutes from "./Routes/PrivateRoutes";
+import Cart from "./Pages/Cart/Cart";
 // import BrandDetails from "./Pages/BrandInfo/BrandDetails";
 
 const router = createBrowserRouter([
@@ -34,15 +35,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/mycart",
+        element: <Cart></Cart>,
+      },
+      {
         path: "/brands/:brandName",
         element: <BrandsDetails></BrandsDetails>,
         loader: () => fetch("http://localhost:5000/cars"),
       },
-      // {
-      //   path: "/brands/:id",
-      //   element: <BrandDetails></BrandDetails>,
-      //   loader: () => fetch("http://localhost:5000/brands"),
-      // },
       {
         path: "/addbrand",
         element: <AddBrandInfo></AddBrandInfo>,

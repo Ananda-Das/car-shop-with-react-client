@@ -1,11 +1,47 @@
 import { useLoaderData } from "react-router-dom";
 import Rating from "./Rating";
+import { useContext, useState } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const DetailProduct = () => {
-  
+
+  const {user} = useContext(AuthContext);
+
   const carDetail = useLoaderData();
 
   const { image, name, type, ratting, description, price, brand } = carDetail;
+
+  const [selectedCar, setSelectedCart] = useState([]);
+
+  const handleAddCart = (carDetail) => {
+
+    setSelectedCart([...selectedCar, carDetail]);
+
+    const newData = {...carDetail, user:user.email};
+
+    //send data to the server
+    fetch("http://localhost:5000/carts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success",
+            text: "Successfuly Add to Cart",
+            icon: "success",
+            confirmButtonText: "Okay",
+          });
+        }
+      });
+  };
+
 
   return (
     <div>
@@ -18,14 +54,6 @@ const DetailProduct = () => {
         <div className="overflow-x-auto mb-10">
           <table className="table text-base">
             {/* head */}
-            {/* <thead>
-              <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
-              </tr>
-            </thead> */}
             <tbody>
               {/* row 1 */}
               <tr className="hover">
@@ -44,7 +72,7 @@ const DetailProduct = () => {
               {/* row 3 */}
               <tr className="hover">
                 <td>Price</td>
-                <td>{price}</td>
+                <td>{price} Lac BDT.</td>
               </tr>
               <tr className="hover">
                 <td>Description</td>
@@ -61,7 +89,12 @@ const DetailProduct = () => {
         </div>
         {/* table-end */}
         <div className="card-actions justify-end mb-10">
-          <button className="btn btn-primary">Add To Cart</button>
+          <button onClick={() => handleAddCart(carDetail)} className="btn btn-primary">
+            Add To Cart
+          </button>
+          {/* <button onClick={handleAddCart} className="btn btn-primary">
+            Add To Cart
+          </button> */}
         </div>
       </div>
     </div>
