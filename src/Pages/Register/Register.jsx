@@ -47,6 +47,24 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+
+        //save user data in to mongodb
+        const createdAt = result.user?.metadata?.creationTime;
+        const user = { email, createdAt: createdAt };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              console.log("user added to the database");
+            }
+          });
+
         toast.success("You Registerd Successfuly");
 
         navigate(location?.state ? location.state : "/");
@@ -96,19 +114,16 @@ const Register = () => {
           <div className="form-control">
             <label className="input-group w-full">
               <span className="label-text w-1/3">Password</span>
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="password"
-              name="password"
-              className="input input-bordered relative w-full"
-              required
-            />
-            <span
-              className="absolute text-xl bg-white mt-3 ml-[550px]"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-            </span>
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="password"
+                name="password"
+                className="input input-bordered relative w-full"
+                required
+              />
+              <span className="absolute text-xl bg-white mt-3 ml-[550px]" onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+              </span>
             </label>
           </div>
           <div className="form-control mt-6">
