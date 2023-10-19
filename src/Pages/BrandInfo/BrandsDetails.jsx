@@ -14,13 +14,13 @@ const BrandsDetails = () => {
         <span className="uppercase">{brandName}</span> Cars
       </h1>
       <div>
-        {brandsDetails.map((brandDetails) => (
-          <BrandDetails key={brandDetails._id} brandDetails={brandDetails}></BrandDetails>
-        ))}
-        {/* {sliderData.map((item) => (
-          <BrandSlider key={item._id} item={item}></BrandSlider>
-        ))} */}
-        
+        {
+          brandsDetails.length>0 ? 
+            brandsDetails.map((brandDetails) => (
+              <BrandDetails key={brandDetails._id} brandDetails={brandDetails}></BrandDetails>
+            ))
+            : <h2 className="text-center text-3xl my-12 font-bold">Sorry No Car Available Right Now!!!</h2>
+        }
       </div>
     </div>
   );

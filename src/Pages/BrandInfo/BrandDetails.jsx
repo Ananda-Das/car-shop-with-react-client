@@ -6,8 +6,6 @@ import Rating from "../AddProduct/Rating";
 const BrandDetails = ({ brandDetails }) => {
   const { _id, image, name, type, price, ratting } = brandDetails;
 
-  //   console.log(item);
-
   return (
     <div>
       <div className="card card-side bg-base-100 shadow-xl w-10/12 mx-auto my-5 space-y-5 border">
