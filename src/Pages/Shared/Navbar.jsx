@@ -27,7 +27,7 @@ const Navbar = () => {
       </li>
 
       <li className="uppercase">
-        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to="/mycart">
+        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to="/myCart">
           My Cart
         </NavLink>
       </li>
@@ -68,7 +68,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100 bg-red-500">
+      <div className="navbar bg-gray-400 py-3">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

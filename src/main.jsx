@@ -14,12 +14,14 @@ import Register from "./Pages/Register/Register";
 import AuthProvider from "./Providers/AuthProvider";
 import PrivateRoutes from "./Routes/PrivateRoutes";
 import Cart from "./Pages/Cart/Cart";
+import Error from "./Pages/Error/Error";
 // import BrandDetails from "./Pages/BrandInfo/BrandDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -35,8 +37,13 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/mycart",
-        element: <Cart></Cart>,
+        path: "/mycart/:user",
+        element: (
+          <PrivateRoutes>
+            <Cart></Cart>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) => fetch(`http://localhost:5000/carts/${params.user}`),
       },
       {
         path: "/brands/:brandName",
