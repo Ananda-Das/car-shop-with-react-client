@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brands"),
+        loader: () => fetch("https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/brands"),
       },
       {
         path: "/addProducts",
@@ -43,12 +43,12 @@ const router = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/carts/${params.user}`),
+        loader: ({ params }) => fetch(`https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/carts/${params.user}`),
       },
       {
         path: "/brands/:brandName",
         element: <BrandsDetails></BrandsDetails>,
-        loader: () => fetch("http://localhost:5000/cars"),
+        loader: () => fetch("https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/cars"),
       },
       {
         path: "/addbrand",
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
             <UpdateProduct></UpdateProduct>
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`),
+        loader: ({ params }) => fetch(`https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/cars/${params.id}`),
       },
       {
         path: "/brands/:brandName/details/:id",
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
             <DetailProduct></DetailProduct>
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`),
+        loader: ({ params }) => fetch(`https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/cars/${params.id}`),
       },
       {
         path: "/login",
