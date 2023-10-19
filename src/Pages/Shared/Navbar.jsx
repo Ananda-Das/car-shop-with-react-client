@@ -1,8 +1,15 @@
-import { NavLink } from "react-router-dom";
-import logoPic from "/logo-light.png"
-
+import { Link, NavLink } from "react-router-dom";
+import logoPic from "/logo-light.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
+
   const navLinks = (
     <>
       <li className="uppercase">
@@ -11,7 +18,10 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li className="uppercase">
-        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to="/addProducts">
+        <NavLink
+          className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")}
+          to="/addProducts"
+        >
           Add Product
         </NavLink>
       </li>
@@ -23,33 +33,36 @@ const Navbar = () => {
       </li>
 
       <li className="uppercase">
-        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to="/addbrand">
+        <NavLink
+          className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")}
+          to="/addbrand"
+        >
           Add Brand
         </NavLink>
       </li>
 
-      {/* {user ? (
-            <>
-              <li className="uppercase">
-                <NavLink
-                  className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")}
-                  to="/profile"
-                >
-                  Profile
-                </NavLink>
-              </li>
-              <li className="uppercase">
-                <NavLink
-                  className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")}
-                  to="/booked"
-                >
-                  Booked Event
-                </NavLink>
-              </li>
-            </>
-          ) : (
-            ""
-          )} */}
+      {user ? (
+        <>
+          <li className="uppercase">
+            <NavLink
+              className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")}
+              to="/profile"
+            >
+              Profile
+            </NavLink>
+          </li>
+          <li className="uppercase">
+            <NavLink
+              className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")}
+              to="/booked"
+            >
+              Booked Event
+            </NavLink>
+          </li>
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 
@@ -67,13 +80,32 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl"><img src={logoPic} alt="" /></a>
+          <a className="btn btn-ghost normal-case text-xl">
+            <img src={logoPic} alt="" />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Log In</a>
+          {/* <Link to="/login">
+            <a className="btn">Log In</a>
+          </Link> */}
+          {user ? (
+          <>
+            <span className="mr-3">{user.displayName}</span>
+            <span className="mr-3 btn btn-ghost btn-circle avatar w-10 rounded-full">
+              <img src={user.photoURL} alt="" />
+            </span>
+            <button onClick={handleSignOut} className="btn">
+              Sign Out
+            </button>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="btn">Login</button>
+          </Link>
+        )}
         </div>
       </div>
     </div>
