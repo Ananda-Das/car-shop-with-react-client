@@ -22,7 +22,7 @@ const CartContainer = ({cart,cartsDetails, setCartsDetails}) => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/carts/${_id}`, {
+                fetch(`https://brand-shop-server-inky.vercel.app/carts/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

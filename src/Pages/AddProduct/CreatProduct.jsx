@@ -26,7 +26,7 @@ const CreatProduct = () => {
     const addProduct = { name, image, brand, type, price, description, ratting };
 
     //send data to the server
-    fetch("http://localhost:5000/cars", {
+    fetch("https://brand-shop-server-inky.vercel.app/cars", {
       method: "POST",
       headers: {
         "content-type": "application/json",

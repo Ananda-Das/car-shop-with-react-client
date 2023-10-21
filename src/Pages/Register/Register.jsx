@@ -51,7 +51,7 @@ const Register = () => {
         //save user data in to mongodb
         const createdAt = result.user?.metadata?.creationTime;
         const user = { email, createdAt: createdAt };
-        fetch("http://localhost:5000/users", {
+        fetch("https://brand-shop-server-inky.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

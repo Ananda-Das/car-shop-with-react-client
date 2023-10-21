@@ -1,4 +1,6 @@
 import logopic from "/logo-light1.png";
+import { BiSolidPhoneCall } from 'react-icons/bi';
+// import { FaBeer } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -19,7 +21,7 @@ const Footer = () => {
         </div>
         <div>
           <header className="text-[#D81517] font-semibold"> CALL US ON LINE 1</header>
-          <p className="text-[#333] text-3xl font-semibold">95747 47304</p>
+          <p className="text-[#333] text-3xl font-semibold flex gap-2 items-center"> <BiSolidPhoneCall className="text-red-600"></BiSolidPhoneCall> 95747 47304</p>
           <p className="text-[#333] text-xl font-medium">USEFUL LINKS</p>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
@@ -28,7 +30,7 @@ const Footer = () => {
         </div>
         <div>
           <header className="text-[#D81517] font-semibold"> CALL US ON LINE 2</header>
-          <p className="text-[#333] text-3xl font-semibold">63580 43699</p>
+          <p className="text-[#333] text-3xl font-semibold flex gap-2 items-center"> <BiSolidPhoneCall className="text-red-600"></BiSolidPhoneCall> 63580 43699</p>
           <p className="text-[#333] text-xl font-medium uppercase">our info</p>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>

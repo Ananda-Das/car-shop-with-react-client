@@ -13,7 +13,7 @@ const BrandsDetails = () => {
   const [brandSlider, setBrandSlider] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/brands")
+    fetch("https://brand-shop-server-inky.vercel.app/brands")
       .then((res) => res.json())
       .then((data) => setBrandSlider(data));
   }, []);

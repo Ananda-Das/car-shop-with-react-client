@@ -21,7 +21,7 @@ const DetailProduct = () => {
     const newData = {...carDetail, user:user.email};
 
     //send data to the server
-    fetch("http://localhost:5000/carts", {
+    fetch("https://brand-shop-server-inky.vercel.app/carts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
