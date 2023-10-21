@@ -5,11 +5,8 @@ import FAQ from "./FAQ";
 
 const Home = () => {
 
-  
-
-
   return (
-    <div>
+    <div className="">
       <Banner></Banner>
       <div className="w-5/6 mx-auto">
         <BrandInfo></BrandInfo>
