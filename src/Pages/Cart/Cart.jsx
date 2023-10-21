@@ -7,13 +7,12 @@ const Cart = () => {
 
   const { user } = useParams();
 
-  // const brand = useLoaderData();
+  console.log(user);
 
-  // const { brandName } = useParams();
-
-  // const brandsDetails = brand.filter((brand) => brand.brand === brandName);
 
   const cartDetails = cartInfo.filter((cartInfo) => cartInfo.user === user);
+
+  console.log(cartDetails);
 
   const [cartsDetails, setCartsDetails] = useState(cartDetails);
 

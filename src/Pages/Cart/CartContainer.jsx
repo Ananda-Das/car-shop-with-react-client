@@ -31,11 +31,12 @@ const CartContainer = ({cart,cartsDetails, setCartsDetails}) => {
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
-                                'Your Coffee has been deleted.',
+                                'Your Cart has been Removed.',
                                 'success'
                             )
                             const remaining = cartsDetails.filter(car => car._id !== _id);
                             setCartsDetails(remaining);
+                            // window.location.reload();
                         }
                     })
 

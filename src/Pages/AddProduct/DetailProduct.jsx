@@ -8,6 +8,8 @@ const DetailProduct = () => {
 
   const {user} = useContext(AuthContext);
 
+  console.log(user.uid);
+
   const carDetail = useLoaderData();
 
   const { image, name, type, ratting, description, price, brand } = carDetail;
@@ -18,7 +20,7 @@ const DetailProduct = () => {
 
     setSelectedCart([...selectedCar, carDetail]);
 
-    const newData = {...carDetail, user:user.email};
+    const newData = {...carDetail, user:user.uid};
 
     //send data to the server
     fetch("https://brand-shop-server-inky.vercel.app/carts", {

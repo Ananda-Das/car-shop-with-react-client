@@ -29,7 +29,7 @@ const Navbar = () => {
 
       <li className="uppercase">
         {/* <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to="/myCart"> */}
-        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to={`/mycart/${user?.email}`}>
+        <NavLink className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "text-[#FF444A] underline font-bold" : "")} to={`/mycart/${user?.uid}`}>
           My Cart
         </NavLink>
       </li>
