@@ -4,6 +4,10 @@ import Banner from "./Banner";
 import FAQ from "./FAQ";
 
 const Home = () => {
+
+  
+
+
   return (
     <div>
       <Banner></Banner>

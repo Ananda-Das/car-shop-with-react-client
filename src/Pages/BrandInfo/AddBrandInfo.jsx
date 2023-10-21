@@ -22,7 +22,7 @@ const AddBrandInfo = () => {
     const brandInfo = { brandName, brandImg, brandSliderImg1, brandSliderImg2, brandSliderImg3 };
 
     //send data to the server
-    fetch("https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/brands", {
+    fetch("http://localhost:5000/brands", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -2,8 +2,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
-import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -35,11 +35,11 @@ const Register = () => {
       return;
     } else if (!/[A-Z]/.test(password)) {
       setRegisterError("Your password should have at least one upper case characters.");
-      toast.error(setRegisterError);
+      toast.error("Your password should have at least one upper case characters.");
       return;
     } else if (!/[@#$%^&+*!=]/.test(password)) {
       setRegisterError("Your Password must contain One Special Character!");
-      toast.error(setRegisterError);
+      toast.error("Your Password must contain One Special Character!");
       return;
     }
 
@@ -51,7 +51,7 @@ const Register = () => {
         //save user data in to mongodb
         const createdAt = result.user?.metadata?.creationTime;
         const user = { email, createdAt: createdAt };
-        fetch("https://brand-shop-server-rnqwfr2p1-anandas-projects.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -64,10 +64,9 @@ const Register = () => {
               console.log("user added to the database");
             }
           });
-
-        toast.success("You Registerd Successfuly");
-
+        
         navigate(location?.state ? location.state : "/");
+        toast.success("You Registerd Successfuly");
 
         // update profile info
         updateProfile(result.user, {
@@ -89,7 +88,7 @@ const Register = () => {
     <div className="bg-gray-500 bg-opacity-50 bg-cover bg-no-repeat py-12">
       {/* Register-start */}
       <div>
-        <h1 className="mx-auto pt-5 text-5xl text-center font-extrabold uppercase text-[#db2d2e]">Please Register</h1>
+      <h1 className="mx-auto pt-5 text-5xl text-center font-extrabold uppercase text-[#db2d2e]">Please Register</h1>
 
         {/* form-start */}
         <form onSubmit={handleRegister} className="card-body text-center lg:w-1/2 md:h-3/4 mx-auto">
@@ -100,19 +99,19 @@ const Register = () => {
             </label>
           </div>
           <div className="form-control">
-            <label className="input-group w-full">
+          <label className="input-group w-full">
               <span className="label-text w-1/3">Photo Url</span>
               <input type="text" name="photo" placeholder="Photo Url" className="input input-bordered w-full" required />
             </label>
           </div>
           <div className="form-control">
-            <label className="input-group w-full">
+          <label className="input-group w-full">
               <span className="label-text w-1/3">Email</span>
               <input type="email" name="email" placeholder="email" className="input input-bordered w-full" required />
             </label>
           </div>
           <div className="form-control">
-            <label className="input-group w-full">
+          <label className="input-group w-full">
               <span className="label-text w-1/3">Password</span>
               <input
                 type={showPassword ? "text" : "password"}
@@ -131,8 +130,8 @@ const Register = () => {
           </div>
         </form>
 
-        {registerError && <p className="text-red-700 text-center font-bold">{registerError}</p>}
-        {success && <p className="text-green-600">{success}</p>}
+        {/* {registerError && <p className="text-red-700 text-center font-bold">{registerError}</p>}
+        {success && <p className="text-green-600">{success}</p>} */}
         <p className="text-center">
           Already have an Account ?{" "}
           <Link to="/login" className="text-blue-600 underline">
