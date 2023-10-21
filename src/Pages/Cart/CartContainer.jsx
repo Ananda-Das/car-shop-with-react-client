@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 
-// import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Rating from "../AddProduct/Rating";
 
@@ -9,7 +8,7 @@ const CartContainer = ({cart,cartsDetails, setCartsDetails}) => {
     const { _id, image, name, type, price, ratting } = cart;
 
     const handleDelete = _id => {
-        console.log(_id);
+        // console.log(_id);
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to Delete this!",
@@ -36,7 +35,6 @@ const CartContainer = ({cart,cartsDetails, setCartsDetails}) => {
                             )
                             const remaining = cartsDetails.filter(car => car._id !== _id);
                             setCartsDetails(remaining);
-                            // window.location.reload();
                         }
                     })
 
