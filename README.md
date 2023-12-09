@@ -4,14 +4,24 @@
 
 # https://react-brand-shop-4bc0a.web.app/
 
-My Brand Shop project is used for E-Commerce Operation. To make this Project I have used React.js with CSS Framwork Tailwind & daiusyui. For Authentication I have use Firebase.
+My Brand Shop project is used for E-Commerce Operations. To make this Project I have used React.js with CSS Framework Tailwind & daiusyui. For Authentication, I have used Firebase.
 
-In this Project a user can use some functionality. I am describing it Below: 
+In this Project, a user can use some functionality. I am describing it Below: 
 
 - A user can see our Brands Shop, About us, FAQ Section;
-- A user can eassily redirect to one page another by using Navbar.
-- To see the particular Car Details a user need to login themselvs into our website.
-- A user can manually register with email, name, photourl & password.
-- After succesfull registration user can login to see the car details & Add to Cart.
-- After Add to cart user can see their add to cart product in my cart section. 
-- User can also Login with their exiting google account.
+- A user can easily redirect from one page to another by using Navbar.
+- To see the particular Car Details a user needs to log themselves to our website.
+- A user can manually register with email, name, photo URL & password.
+- After successful registration user can log in to see the car details and add to the Cart.
+- After Add to Cart user can see their Add to Cart product in the My Cart section. 
+- User can also log in with their existing Google account.
+
+# Technology Used
+
+- HTML
+- CSS
+- Javascript
+- React
+- Tailwind
+- JWT Token
+- Firebase
